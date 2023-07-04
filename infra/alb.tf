@@ -2,7 +2,7 @@ resource "aws_lb" "alb" {
   name               = "ECS-Django-lb"
   load_balancer_type = "application"
   security_groups    = [aws_security_group.alb_sg.id]
-  subnets            = [module.vpc.public_subnets]
+  subnets            = module.vpc.public_subnets
 }
 
 resource "aws_lb_target_group" "grupo_alvo" {
